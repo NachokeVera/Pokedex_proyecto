@@ -17,48 +17,107 @@
                 <img src="img/logo.png" class="img-fluid" alt="">
             </div>
             <div class="col-12 col-md-6 col-lg-9 pt-4">
-                <h3>Chupalo benja</h3>
+                <h3>pokemon</h3>
             </div>
         </div>
         
     </header>
     <main class="container-fluid pt-5">
         <div class="row">
-            
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card">
                         <div class="card-header text-light bg-warning ">
                             <span>Registrar Pokemon</span>
                         </div>
                         <div class="card-body">
-                            <span>Bruh</span>
+                            <div class="mb-3">
+                                <label class="form-label" for="nombre-txt">Nombre</label>
+                                <input class="form-control" type="text" id="nombre-txt">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="description-txt">Descripcion</label>                                
+                                <input type="text" class="form-control" id="description-txt">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="Legendario-rb">Legendario</label>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio"
+                                        class="form-check-input" 
+                                        name="legenradio-rb" 
+                                        id="legendario-si">
+                                    <label class="form-check-label" for="legendario-si">si</label>
+                                </div>
+                                
+                                <div class="form-check form-check-inline">
+                                    <input type="radio"
+                                        class="form-check-input" 
+                                        name="legenradio-rb" 
+                                        id="legendario-no">
+                                    <label class="form-check-label" for="legendario-no">no</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tipo-select" class="form-label">Tipo</label>
+                                <select id="tipo-select" class="form-select">
+                                    <option value="planta">Planta</option>
+                                    <option value="agua">Agua</option>
+                                    <option value="fuego">Fuego</option>
+                                    <option value="normal">Normal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-footer row">
+                            <div class="col-6">
+                                <button type="button" class="btn btn-success" id="registrar-btn">Registrar</button>
+                            </div>
+                            <div class="col-6 text-end">
+                                <button type="button" class= "btn btn-info" id="limpiar-btn">Limpiar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col col-md col-lg">
                     <div class="card">
-                        <div class="card-header text-center">
-                            <span>Bruh</span>
+                        <div class="card-header text-center text-light bg-warning">
+                            <span>Pokedex</span>
                         </div>
-                        <div class="card-body text-center">
-                            <span>Bruh</span>
+                        <div class="card-body">
+                            <table class="table table-hover table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>NRO</th>
+                                        <th>Nombre</th>
+                                        <th>Tipo</th>
+                                        <th>Descripcion</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Bulbasour</td>
+                                        <td>Planta</td>
+                                        <td>El inicial que nadie usa</td>
+                                        <td>Eliminar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Bur</td>
+                                        <td>Plf</td>
+                                        <td> nadie usa</td>
+                                        <td>Eiminar</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
         </div>
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-
+       
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
+    <script src="js/index.js"></script>
     
   </body>
 </html> 
