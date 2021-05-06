@@ -31,6 +31,9 @@ const cargarTabla = () =>{
     tdNro.innerText = (i+1);
     let tdNombre = document.createElement("td");
     tdNombre.innerText = p.nombre;
+    if (p.legendario == true){
+      tdNombre.classList.add("text-warning")
+    }
     let tdTipo = document.createElement("td");
     
     let icono = document.createElement("i");
@@ -46,10 +49,33 @@ const cargarTabla = () =>{
       icono.classList.add("fas","fa-2x","fa-star","text-info");
     }
     tdTipo.appendChild(icono);
+    
+const eliminarPokemon = async function(){
+  let res = await Swal.fire({
+    title: `Desea eliminar el pokemon ${pokemones[this.nro].nombre}`,
+    showCancelButton: true,
+    confirmButtonText: `Si, eliminar`,
+  });
+  if (res.isConfirmed){
+    swal.fire("Se elimino");
+    pokemones.splice(this.nro,1);
+    cargarTabla();
+  }else{
+    swal.fire("Se cancelo");
+  }
+};
 
     let tdDesc = document.createElement("td");
     tdDesc.innerHTML =p.descripcion;
+    
     let tdAcciones = document.createElement("td");
+    let boton = document.createElement("button");
+    boton.classList.add("btn","btn-warning");
+    boton.innerText = "Eliminar";
+    boton.nro = i;
+    boton.addEventListener("click",eliminarPokemon);
+
+    tdAcciones.appendChild(boton)
   //5.- Agregar el tr a la tabla
   
   tr.appendChild(tdNro);
@@ -85,4 +111,10 @@ document.querySelector("#registrar-btn").addEventListener("click", ()=>{
     cargarTabla();
     Swal.fire("Exito!","Pokemon registrado","success")
 
+});
+document.querySelector("#limpiar-btn").addEventListener("click", ()=>{
+  document.querySelector("#nombre-txt").value = "";
+  tinymce.get("description-txt").setContent("");
+  document.querySelector("#legendario-no").checked = true;
+  document.querySelector("#tipo-select").value = "Planta";
 });
